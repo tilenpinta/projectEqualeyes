@@ -1,0 +1,168 @@
+% Avtorja baze: Tilen Pintaric, Ivan Jovanovic
+%
+%
+% atributi: 
+%
+% 	1. Izkusnje dostavljalca predstavljene v letih 	(categorical) 	1 = leto, 2 = dve leti, 5 = 5 ali vec 
+% 	2. Uspesnost vseh dostav, izražena v procentih 	(numeric)		0 do 100
+%	3. Ce je prislo do komplikacije z naslovnikom 	(binary) 		0 = ne, 1 = da
+%	4. Kolikor casa je preteklo od oddaje narocila	(categorical) 	1 = teden, 2 = dva tedna, ... 5 = 5 ali vec tednov
+%	5. Cena izdelkov v narocilu						(categorical) 	1= do 100€, 2 = do 200€, 3 = do 500€, 4 = do 1000€, 5 = nad 1000€
+% 	6. Lokacija paketnika							(categorical)   1 = Ljubljana, 2 = Maribor, 3 = Kranj, = Koper, 5 = Celje, 6 = Novo Mesto, 7 = Velenje, 8 = Nova_Gorica, 9 = Ptuj, 10 = Murska Sobota, 11 = Slovenj Gradec
+%  	7. Dostava uspesno izvedena 					(binary) 		0 = ne, 1 = da
+
+@relation paketnik
+
+@attribute delovne_izkusnje {1, 2, 3, 4, 5}
+@attribute uspesnost_dostavljalca numeric
+@attribute komplikacije_z_naslovnikom {da, ne}
+@attribute pretekel_cas_od_oddaje_narocila {1, 2, 3, 4, 5}
+@attribute cena_narocila {1, 2, 3, 4, 5}
+@attribute lokacija_paketnika {1,2,3,4,5,6,7,8,9,10,11}
+@attribute dostava_uspesna {neuspela, uspela}
+
+@data
+1	78	da	5	2   3   neuspela
+1	78	da	5	4   8   neuspela
+1	78	da	1	4   2   uspela
+1	78	da	5	1   4   neuspela
+1	78	da	1	2   3   uspela
+1	75	ne	1	2   1   uspela
+1	70	ne	2	4   4   uspela
+1	70	ne	3	3   5   uspela
+1	71	ne	3	5   3   uspela
+1	72	ne	3	4   1   uspela
+1	71	ne	1	3   6   uspela
+1	73	ne	4	4   2   uspela
+1	73	ne	3	5   4   uspela
+1	76	ne	3	2   1   uspela
+1	76	ne	1	4   8   uspela
+1	70	ne	2	2   10  uspela
+2	81	da	3	3   6   neuspela
+2	85	da	1	1   10  neuspela
+2	85	da	3	3   4   uspela
+2	81	ne	2	1   4   uspela
+2	82	da	1	1   9   uspela
+2	83	ne	1	5   3   uspela
+2	84	ne	1	1   2   uspela
+2	85	da	1	5   4   uspela
+2	71	da	4	5   7   neuspela
+2	83  ne	3	2   3   uspela
+2	80	ne	3	1   9   uspela
+2	81	da	1	3   9   uspela
+2	85	ne	3	1   1   uspela
+2	71	da	5	1   7   neuspela
+2	80	da	3	3   9   uspela
+2	84	da  1	4   10  uspela
+2	83	da	3	5   9   uspela
+2	82	da	2	5   5   uspela
+2	83	da	1	4   4   uspela
+2	80	ne	1	3   7   uspela
+2	83	ne	1	5   1   uspela
+3	86	ne	1	1   1   uspela
+3	85	ne	1	4   2   uspela
+3	85	ne	2	1   6   uspela
+3	90	ne	3	3   7   uspela
+3	89	ne	2	3   3   uspela
+3	89	ne	3	3   8   uspela
+3	86	ne	3	3   2   uspela
+3	88	ne	1	5   7   uspela
+3	87	ne	3	2   8   uspela
+3	88	ne	3	1   2   uspela
+3	87	ne	3	2   7   uspela
+3	71	da	4	1   8   neuspela
+3	70	da	4	2   4   neuspela
+3	85	ne	2	1   3   uspela
+3	87	ne	1	4   2   uspela
+3	85	ne	2	5   4   uspela
+3	86	ne	3	1   9   uspela
+3	88	ne	3	3   9   uspela
+3	89	ne	1	4   4   uspela
+3	87	ne	2	3   9   uspela
+3	88	ne	3	1   9   uspela
+3	86	ne	3	2   2   uspela
+3	87	ne	1	4   10  uspela
+3	70	da	5	4   7   neuspela
+3	89	ne	3	3   2   uspela
+3	85	ne	3	2   4   uspela
+3	70	da	4	3   5   neuspela
+4	92	da	5	5   3   uspela
+4	94	da	4	5   7   uspela
+4	95	ne	3	4   1   uspela
+4	91	ne	1	1   10  uspela
+4	92	da	5	5   3   uspela
+4	91	ne	3	3   8   uspela
+4	91	ne	3	4   4   uspela
+4	93	ne	5	3   3   uspela
+4	91	ne	3	5   11  uspela
+4	91	ne	1	2   6   uspela
+4	95	ne	1	3   8   uspela
+4	95	ne	1	2   4   uspela
+4	93	ne	5	1   3   uspela
+4	94	ne	1	4   9   uspela
+4	90	da	5	5   10  uspela
+4	93	ne	2	2   5   uspela
+4	94	ne	2	1   1   uspela
+4	92	ne	1	3   9   uspela
+4	90	ne	2	2   10  uspela
+4	95	ne	3	5   10  uspela
+4	93	ne	3	3   3   uspela
+4	91	ne	2	5   8   uspela
+4	95	ne	2	4   7   uspela
+4	91	ne	3	3   8   uspela
+4	94	ne	2	1   6   uspela
+4	93	ne	2	1   5   uspela
+4	95	ne	1	1   9   uspela
+4	95	ne	1	3   10  uspela
+4	94	da	4	4   8   uspela
+4	95	ne	1	1   11  uspela
+4	92	ne	1	5   4   uspela
+4	95	ne	1	4   5   uspela
+4	93	ne	3	1   1   uspela
+4	93	ne	1	4   4   uspela
+5	97	ne	1	5   2   uspela
+5	95	ne	2	4   1   uspela
+5	100	ne	1	1   2   uspela
+5	96	ne	2	5   1   uspela
+5	100	ne	3	3   7   uspela
+5	98	ne	1	5   1   uspela
+5	99	ne	3	4   3   uspela
+5	100	ne	1	1   1   uspela
+5	97	ne	2	5   6   uspela
+5	95	da	5	1   6   uspela
+5	97	ne	3	1   6   uspela
+5	99	ne	3	1   4   uspela
+5	95	ne	3	4   4   uspela
+5	96	ne	2	4   4   uspela
+5	97	ne	2	1   8   uspela
+5	100	ne	2	3   6   uspela
+5	95	ne	1	4   9   uspela
+5	96	ne	3	1   8   uspela
+5	97	ne	3	2   11  uspela
+5	100	ne	2	4   8   uspela
+5	97	ne	1	3   3   uspela
+5	95	ne	3	5   11  uspela
+5	95	da	5	5   8   uspela
+5	97	ne	2	1   1   uspela
+5	96	ne	2	2   9   uspela
+5	96	da	5	5   2   uspela
+5	99	ne	2	5   6   uspela
+5	96	ne	1	1   4   uspela
+5	95	ne	2	2   11  uspela
+5	97	ne	3	4   7   uspela
+5	98	da	5	3   7   uspela
+5	98	ne	2	5   4   uspela
+5	96	ne	2	2   7   uspela
+5	96	ne	1	3   5   uspela
+5	97	ne	2	3   10  uspela
+5	96	ne	1	2   6   uspela
+5	99	ne	2	4   9   uspela
+5	100	ne	1	1   9   uspela
+5	100	ne	2	4   11  uspela
+5	98	ne	3	4   3   uspela
+5	95	ne	2	2   4   uspela
+5	100	ne	3	5   1   uspela
+5	96	ne	3	2   2   uspela
+5	100	ne	1	2   7   uspela
+5	95	ne	2	5   6   uspela
+5	96	ne	1	4   10  uspela

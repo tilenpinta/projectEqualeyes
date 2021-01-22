@@ -1,0 +1,29 @@
+% Avtorja baze: Tilen Pintaric, Ivan Jovanovic
+%
+% test baza za paketnik.arff
+% podatki so popaceni oz. se malo razlikujejo od tistih iz paketnika
+
+@relation test
+
+@attribute delovne_izkusnje {1, 2, 3, 4, 5}
+@attribute uspesnost_vseh_dostav numeric
+@attribute komplikacije_z_naslovnikom {da, ne}
+@attribute pretekel_cas_od_oddaje_narocila {1, 2, 3, 4, 5}
+@attribute cena_narocila {1, 2, 3, 4, 5}
+@attribute lokacija_paketnika {1,2,3,4,5,6,7,8,9,10,11}
+@attribute dostava_uspesna {neuspela, uspela}
+
+@data
+1	72	da	5	2   3   neuspela
+5   98  da  2   3   3   uspela
+3   83  da  2   3   3   uspela
+4   94  da  4   3   3   uspela
+4   93  da  4   3   3   neuspela
+3   75  da  5   3   3   neuspela
+5   96  da  2   3   3   neuspela
+5   97  da  2   3   3   uspela
+5   98  da  5   3   3   uspela
+4   67  da  2   2   1   uspela
+1   65  da  3   2   1   uspela
+2   85  da  5   2   1   neuspela
+3   65  ne  4   2   1   neuspela

@@ -8,7 +8,7 @@
 <table>
   <tr>
     <td>Using "StringBuilder"</td>
-     <td>Using "Recyclerview"</td>
+     <td>Using "RecyclerView"</td>
   </tr>
   <tr>
     <td><img src="Screenshot.png" width="250"></td>

@@ -1,4 +1,4 @@
-# Project to get all reddit titles and put it into app :clipboard:
+# Project to get reddit titles and put it into app :clipboard:
 
 ## Made in Android Studio with java
 

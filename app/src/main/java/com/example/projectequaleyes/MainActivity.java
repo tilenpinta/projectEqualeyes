@@ -5,24 +5,30 @@ import android.util.Log;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
+import java.util.ArrayList;
+
+import static com.example.projectequaleyes.Titles.createTitlesList;
+
+
 public class MainActivity extends AppCompatActivity {
 
-    TextView tvTitle;
+    ArrayList<Titles> titlesArrayList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        tvTitle = findViewById(R.id.titleRed);
-
         getTitles();
+
     }
 
     private void getTitles() {
@@ -32,21 +38,20 @@ public class MainActivity extends AppCompatActivity {
             public void run() {
                 try {
                     Document doc = Jsoup.connect("https://www.reddit.com/").get();
-                    Elements titles = doc.select("h3._eYtD2XCVieq6emjKBH3m");
-                    int i = 1;
-                    for (Element e : titles) {
+                    Elements elements = doc.select("h3._eYtD2XCVieq6emjKBH3m");
 
-                        strBuild.append(i + ". " + e.text() + "\n\n");
-                        i++;
-                    }
-                    Log.d("aaa", strBuild.toString());
+                    titlesArrayList = createTitlesList(elements);
+
                 } catch (Exception ex) {
                     ex.fillInStackTrace();
                 }
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        tvTitle.setText(strBuild.toString());
+                        RecyclerView rvTitles = (RecyclerView) findViewById(R.id.rvTitles);
+                        TitlesAdapter adapter = new TitlesAdapter(titlesArrayList);
+                        rvTitles.setAdapter(adapter);
+                        rvTitles.setLayoutManager(new LinearLayoutManager(MainActivity.this));
                     }
                 });
             }

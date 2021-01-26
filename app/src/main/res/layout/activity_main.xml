@@ -6,26 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.google.android.material.circularreveal.CircularRevealLinearLayout
-        android:id="@+id/circularRevealLinearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:layout_editor_absoluteX="0dp" >
-
-
-    </com.google.android.material.circularreveal.CircularRevealLinearLayout>
-
-    <TextView
-        android:id="@+id/titleRed"
-        android:text="LOADING"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:textStyle="bold"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvTitles"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/circularRevealLinearLayout"
-        app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

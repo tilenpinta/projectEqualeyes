@@ -14,10 +14,8 @@ public class Titles{
 
     public static ArrayList<Titles> createTitlesList(Elements ele) {
         ArrayList<Titles> titles = new ArrayList<Titles>();
-        int i = 0;
         for (Element e : ele) {
-            i++;
-            titles.add(new Titles(i + ". " + e.text()));
+            titles.add(new Titles(e.text()));
         }
         return titles;
     }

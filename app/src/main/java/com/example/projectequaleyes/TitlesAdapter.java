@@ -1,6 +1,7 @@
 package com.example.projectequaleyes;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,6 +33,14 @@ public class TitlesAdapter extends
 
         TextView textView = holder.titleTextView;
         textView.setText(title.getTitle());
+        if(position %2 == 1)
+        {
+            holder.itemView.setBackgroundColor(Color.parseColor("#FFFFFF"));
+        }
+        else
+        {
+            holder.itemView.setBackgroundColor(Color.parseColor("#DAD2D1D8"));
+        }
     }
 
     @Override
